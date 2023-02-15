@@ -11,7 +11,6 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-/* контейнер 1370, но сделали 1400 (по 15 слева и справа) чтобы контент не прилипал к карям экрана и добавили отступы */
 
 .container-wide {
     width: 1536px;
@@ -39,14 +38,7 @@ body {
 .header-nav li + li {
     margin-left: 70px;
 } 
-/* отступ будет только у тех у кого есть сосед слева. Ниже варианты как можно ещё сделать*/
-/*
-.header-nav li:not(:last-child) {
-    margin-right: 70px;
-}*/
-/* .header-nav li:last-child {
-    margin-right: 0px;
-} */
+
 .header-nav a {
     transition: color 0.2s ease;
 }
@@ -62,7 +54,7 @@ body {
 
 .header-login > * + * {
     margin-left: 35px;
-} /*Выбрали элемент первого уровня, у которого есть сосед справа, чтобы сделать отступ влево (margin-left). > - Выбирает первый элемент, * - любой элемент на первом уровне */
+} 
 
 .header-login-link {
     color: black;
@@ -77,10 +69,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 51px;
-    line-height: 51px; - Можно выровнять по центру так, а можно как выше
-    Вариант с флексом не очень, так как кнопка зависит от того куда мы её положим. Получается не самостоятельная. */
-
+   
     padding-left: 50px;
     padding-right: 50px;
     background-color: #01996D;
@@ -104,7 +93,6 @@ body {
     min-height: 895px;
     padding: 175px 0;
 }
-/*Сделали паддинги сверху и снизу по 175 (хотя на макете снизу больше) чтобы было куда расти контенту*/
 
 .home-content {
     max-width: 440px;
@@ -116,10 +104,6 @@ body {
     color: #01996D;
     margin-bottom: 30px;
 }
-
-/*.home-heading + * {
-    margin-top: 30px;
-}   Если что-то находится под хэдингом, у этого чего-то всегда отступ сверху 30px*/
 
 .home-text {
     line-height: 31px;
@@ -226,11 +210,6 @@ body {
     color: #424242;
     margin-bottom: 60px;
 }
-/* .step-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}  То, как до этого просто разместили картинку на странице. */
 
 .step-img-wrapper {
     position: relative;
@@ -245,9 +224,6 @@ body {
     height: auto;
     object-fit: cover;
 }
-/* Это альтернативный способ как разместить картинку, чтобы было более гибко.
-Если без position: relative; и position: absolute; то паддинг выталкивает картинку.
-126% (Пропорция высоты картинки) - это мы высоту разделили на ширину. Получается 126% от ширины картинки. Будет расти и уменькаться с карточкой, но пропорции будут сохранены. */
 
 .story {
     color: #FFFFFF;
@@ -458,4 +434,96 @@ body {
 
 .footer-nav a:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 1299px) {
+    .footer {
+        padding: 80px 0 100px;
+    }
+    .footer-logo + * {
+        margin-top: 50px;
+    }
+    .footer-nav {
+        font-size: 22px;
+    }
+    .footer-nav li + li {
+        margin-top: 40px;
+    }
+}
+@media (max-width: 500px) {
+    .footer {
+        padding: 40px 0 60px;
+    }
+    .footer-logo + * {
+        margin-top: 40px;
+    }
+    .footer-nav {
+        font-size: 18px;
+    }
+    .footer-nav li + li {
+        margin-top: 30px;
+    }
+}
+
+.mobile-nav-button {
+    /*Reset for button*/
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    /*Nav icon styles*/
+    position: relative;
+    z-index: 999;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-button {
+        display: flex;
+    }
+}
+
+.mobile-nav-button__icon {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 5px;
+    background-color: #292929;
+}
+.mobile-nav-button__icon::after, .mobile-nav-button__icon::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 5px;
+    background-color: #292929;
+    transition: transform 0.15s ease-in, top 0.15s ease-in 0.15s;
+}
+
+.mobile-nav-button__icon::before {
+    left: 0;
+    top: -10px;
+}
+.mobile-nav-button__icon::after {
+    left: 0;
+    top: 10px;
+}
+.mobile-nav-button__icon.active {
+    background-color: transparent;
+}
+.mobile-nav-button__icon.active::before {
+    transform: rotate(45deg);
+    top: 0;
+    transition: top 0.15s linear, transform 0.15s ease-in 0.15s;
+}
+.mobile-nav-button__icon.active::after {
+    transform: rotate(-45deg);
+    top: 0;
+    transition: top 0.15s linear, transform 0.15s ease-in 0.15s;
 }
