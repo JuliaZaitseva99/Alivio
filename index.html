@@ -7,6 +7,7 @@
     <title>Alivio</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/mobile-nav.css">
     <link rel="stylesheet" href="styles/fonts/Georgia/stylesheet.css">
     <link rel="stylesheet" href="styles/fonts/Lato/stylesheet.css">
 </head>
@@ -26,10 +27,31 @@
             <div class="header-login">
                 <a href="#" class="header-login-link">Sign in</a>
                 <a href="#" class="btn">Start Trial</a>
+                
+                <button type="button" class="mobile-nav-button">
+                <span class="mobile-nav-button__icon"></span>
+            </button>
+                
             </div>
             </div>
         </div>
     </header>
+    
+    <div class="mobile-nav">
+        <img src="./images/Logo.svg" alt="Logo" class="mobile-nav-logo">
+        <nav class="mobile-nav-list">
+            <ul class="nav">
+                <li class="nav-item"><a href="#">Why Alivio</a></li>
+                <li class="nav-item"><a href="#">Solutions</a></li>
+                <li class="nav-item"><a href="#">Community</a></li>
+                <li class="nav-item"><a href="#">Pricing</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-login">
+            <a href="#" class="mobile-login-link">Sign in</a>
+            <a href="#" class="btn">Start Trial</a>
+        </div>
+    </div>
 
     <main>
 
@@ -74,8 +96,7 @@
                         <div class="step-img-wrapper">
                             <img class="step-img" src="./images/Card01.jpg" alt="Card img">
                         </div>
-
-                        <!--<img class="step-img" src="./images/Card01.jpg" alt="Card img">-->
+                       
                     </div>
                     <div class="step">
                         <h4 class="step-heading" data-number="02">Write & Understand</h4>
@@ -185,6 +206,6 @@
         </div>
 
     </footer>
-    
+    <script src="./js/main.js"></script>
 </body>
 </html>
